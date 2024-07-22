@@ -19,17 +19,17 @@
      ```
      lines = 1
      words = 4
-     top-5 = 'one' (1), 'two' (1), 'three' (1), 'four' (1)
+     top-5 = 'four' (1), 'one' (1), 'three' (1), 'two' (1)
      ```
 
 3. **Exactly 5 Unique Words**
 
-   - **Input**: `apple orange banana apple banana orange apple banana orange banana`
+   - **Input**: `apple orange banana lemon grape orange apple banana orange banana`
    - **Expected Output**:
      ```
      lines = 1
      words = 10
-     top-5 = 'banana' (4), 'apple' (3), 'orange' (3)
+     top-5 = 'banana' (3), 'orange' (3), 'apple' (2), 'grape' (1), 'lemon' (1),
      ```
 
 4. **More than 5 Unique Words**
@@ -39,7 +39,7 @@
      ```
      lines = 1
      words = 12
-     top-5 = 'one' (1), 'two' (1), 'three' (1), 'four' (1), 'five' (1)
+     top-5 = 'five' (1), 'four' (1), 'one' (1), 'three' (1), 'two' (1)
      ```
 
 5. **Case Sensitivity**
@@ -49,7 +49,7 @@
      ```
      lines = 1
      words = 3
-     top-5 = 'case' (1), 'Case' (1), 'CASE' (1)
+     top-5 = 'case' (3)
      ```
 
 6. **Punctuation Handling**
@@ -59,17 +59,17 @@
      ```
      lines = 1
      words = 3
-     top-5 = 'Hello' (1), 'hello' (1), 'HELLO' (1)
+     top-5 = 'hello' (3)
      ```
 
 7. **Newline and Spaces Handling**
 
-   - **Input**: ` This    is\n a test `
+   - **Input**: `This    is\n a test`
    - **Expected Output**:
      ```
      lines = 2
      words = 4
-     top-5 = 'This' (1), 'is' (1), 'a' (1), 'test' (1)
+     top-5 = 'a' (1), 'is' (1), 'test' (1), 'This' (1)
      ```
 
 8. **Non-Alphanumeric Characters**
@@ -78,19 +78,18 @@
      ```
      lines = 1
      words = 4
-     top-5 = 'Hello' (1), '@world' (1), '#test' (1), '&code' (1)
+     top-5 = '@world' (1), '#test' (1), '&code' (1), 'Hello' (1)
      ```
 
 ## Assumptions and Missing Information
 
-1. **Case Sensitivity**: Assuming that the word count is case-sensitive, i.e., 'This' and 'this' are counted as different words. This should be clarified.
+1. **Case Insensitivity**: Assuming that the word count is case-insensitive, i.e., 'This' and 'this' are counted as same words. This should be clarified.
 2. **Punctuation Handling**: Assuming words are split by spaces and punctuation is included as part of the word. If punctuation should be stripped, this needs to be specified.
 3. **Non-Alphanumeric Characters**: Assuming non-alphanumeric characters are considered part of the word. If they should be ignored or stripped out, this needs to be defined.
 4. **Definition of a Word**: Assuming a word is any sequence of characters separated by whitespace. If other delimiters (e.g., punctuation) are considered, this should be detailed.
 5. **Output Order**: Assuming the output is sorted by frequency first and then alphabetically for words with the same frequency.
 6. **Special Characters**: Handling of special characters, emoji, and other Unicode symbols should be defined.
 7. **Whitespace Handling**: How leading, trailing, and multiple spaces between words are handled should be specified.
-8. **Large Files**: Performance on large files and how the top-5 is determined in such cases should be considered.
 
 ---
 
