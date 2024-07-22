@@ -1,0 +1,23 @@
+[
+  {
+    "role": "Accountant",
+    "country": "Brazil",
+    "low": "51K",
+    "median": "149K",
+    "high": "383K"
+  },
+  {
+    "role": "QA Engineer",
+    "country": "Canada",
+    "low": "57K",
+    "median": "135K",
+    "high": "182K"
+  },
+  {
+    "role": "Software Engineer",
+    "country": "Japan",
+    "low": "8M",
+    "median": "15M",
+    "high": "24M"
+  }
+]
